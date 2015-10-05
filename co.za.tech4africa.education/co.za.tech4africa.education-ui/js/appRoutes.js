@@ -23,8 +23,8 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
         
         .when('/recover-password', {
-            templateUrl: 'pages/security/team-leaderboard.html',
-            controller: 'LeaderboardController'
+            templateUrl: 'pages/security/recover-password.html',
+            controller: 'RecoverPasswordController'
         })
         
         ;
