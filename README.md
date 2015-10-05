@@ -7,3 +7,6 @@ Students arrive at school / university, and find that their teachers are not the
 ## Solution
 Enable students to rate their teachers using a simple mobile app, so that this data can be shared with other students / educational institutions.
 Hopefully the result will be greater accountability.
+
+### Technical notes
+All development is currently on the "develop" branch.
