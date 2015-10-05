@@ -1,12 +1,12 @@
 angular.module('RateMyTeacherApp', [
-	//'ngRoute', 
-	//'appRoutes', 
+	'ngRoute', 
+	'appRoutes', 
 	
 	// Controllers: 
 	
 	'LoginCtrl',
-	//'RegistrationCtrl',
-	//'RecoverPasswordCtrl',
+	'RegistrationCtrl',
+	'RecoverPasswordCtrl',
 	
 	// Services: 
 	

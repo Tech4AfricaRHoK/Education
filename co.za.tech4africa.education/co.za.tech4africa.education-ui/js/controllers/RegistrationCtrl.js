@@ -8,7 +8,7 @@ angular.module('RegistrationCtrl', []).controller('RegistrationController', func
         cellno: ""
     };
     
-    $('#registrationForm').parsley();    
+    //$('#registrationForm').parsley();    
     
     // Authenticate user
     $scope.register = function(){        
