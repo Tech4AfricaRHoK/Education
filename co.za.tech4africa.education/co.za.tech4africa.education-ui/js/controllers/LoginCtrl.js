@@ -5,7 +5,7 @@ angular.module('LoginCtrl', []).controller('LoginController', function($scope, $
         password: ""
     };
     
-    $('#loginForm').parsley();
+   // $('#loginForm').parsley();
     
     $scope.steam = function(){
         $window.location.href = '/auth/steam';

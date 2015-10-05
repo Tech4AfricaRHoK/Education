@@ -1,15 +1,15 @@
-angular.module('RateMySchoolApp', [
-	'ngRoute', 
-	'appRoutes', 
+angular.module('RateMyTeacherApp', [
+	//'ngRoute', 
+	//'appRoutes', 
 	
 	// Controllers: 
 	
 	'LoginCtrl',
-	'RegistrationCtrl',
-	'RecoverPasswordCtrl',
+	//'RegistrationCtrl',
+	//'RecoverPasswordCtrl',
 	
 	// Services: 
 	
-	'AuthenticationService',
+	'AuthenticationService'
 	
 ]);
