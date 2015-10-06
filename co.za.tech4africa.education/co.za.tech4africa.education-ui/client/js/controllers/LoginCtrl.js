@@ -1,5 +1,5 @@
 angular.module('LoginCtrl', []).controller('LoginController', function($scope, $http, $window, Authentication) {
-
+    var loginC = this;
     $scope.loginData = {
         username: "",
         password: ""
@@ -12,26 +12,27 @@ angular.module('LoginCtrl', []).controller('LoginController', function($scope, $
     }
     
     // Authenticate user
-    $scope.login = function(){        
-        Authentication.login(JSON.stringify($scope.loginData))
-        .success(function(data){
-            $scope.loginFormData = {};
-            $scope.user = data;
-            console.log(data);
+    loginC.login = function(){  
+        $window.location.href = '/rate-my-teacher';      
+        //Authentication.login(JSON.stringify($scope.loginData))
+        //.success(function(data){
+        //    $scope.loginFormData = {};
+        //    $scope.user = data;
+        //    console.log(data);
             
             // Create session for the user from response
-            Authentication.session(JSON.stringify(data))
-            .success(function(data){
-                $window.location.href = '/school/ratemyteacher';
-            })
-            .error(function(data){
-                $window.location.href = '/registration';
-            });  
+        //    Authentication.session(JSON.stringify(data))
+        //    .success(function(data){
+        //        $window.location.href = '/school/ratemyteacher';
+        //    })
+        //    .error(function(data){
+        //        $window.location.href = '/registration';
+        //    });  
                       
-        })
-        .error(function(data){
-            $window.location.href = '/registration';
-        });
+        //})
+        //.error(function(data){
+        //    $window.location.href = '/registration';
+        //});
     };
     
 });

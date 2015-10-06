@@ -4,29 +4,37 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
         // home page
         .when('/', {
-            templateUrl: 'pages/login.html',
+            templateUrl: 'pages/auth/login.html',
             controller: 'LoginController'
         })
         
         // Login:
         
         .when('/login', {
-            templateUrl: 'pages/login.html',
+            templateUrl: 'pages/auth/login.html',
             controller: 'LoginController'
         })
         
         // Registration:
         
         .when('/registration', {
-            templateUrl: 'pages/register.html',
+            templateUrl: 'pages/auth/register.html',
             controller: 'RegistrationController'
         })
         
+        // Recover Password:
+
         .when('/recover-password', {
-            templateUrl: 'pages/recover-password.html',
+            templateUrl: 'pages/auth/recover-password.html',
             controller: 'RecoverPasswordController'
         })
         
+        // Recover Password:
+
+        .when('/rate-my-teacher', {
+            templateUrl: 'pages/teacher/rate.html',
+            controller: 'RecoverPasswordController'
+        })
         ;
 
     $locationProvider.html5Mode(true);
