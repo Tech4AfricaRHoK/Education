@@ -62,7 +62,7 @@ class TeacherSubjectGrade(models.Model):
     teacher = models.ForeignKey(Profile)
     subject = models.ForeignKey(Subject)
     grade = models.IntegerField()
-    year = models.IntegerField(min_value=2015, help_text=_("The year for which this subject is relevant"))
+    year = models.IntegerField(help_text=_("The year for which this subject is relevant"))
     school = models.ForeignKey(School)
 
 
@@ -70,10 +70,10 @@ class Rating(models.Model):
     """
     For when a student wants to rate a particular teacher.
     """
-    value = models.IntegerField(help_text=_("Rating given to a teacher"), min_value=1, max_value=5)
+    value = models.IntegerField(help_text=_("Rating given to a teacher"))
     comment = models.TextField(blank=True, null=True, help_text=_("Comment associated with a rating"))
-    teacher = models.ForeignKey(Profile, help_text=_("The teacher associated with this rating"))
-    student = models.ForeignKey(Profile, help_text=_("The student associated with this rating"))
+    teacher = models.ForeignKey(Profile, help_text=_("The teacher associated with this rating"), related_name='teacher_ratings')
+    student = models.ForeignKey(Profile, help_text=_("The student associated with this rating"), related_name='student_ratings')
 
 
 class Incident(models.Model):
@@ -93,9 +93,9 @@ class Incident(models.Model):
         (MISSING_TEACHER, 'Missing teacher'),
         (OTHER, 'Other'),
     )
-    incident_type = models.CharField(max_length=255, help_text=_("Type of incident"), choices=INCIDENT_TYPES)
+    incident_type = models.CharField(max_length=255, help_text=_("Type of incident"), choices=TYPES)
     other_type = models.CharField(max_length=255, help_text=_("Other type of incident"), blank=True, null=True)
     comment = models.TextField(blank=True, null=True, help_text=_("Comment associated with a incident"))
-    teacher = models.ForeignKey(Profile, help_text=_("The teacher associated with this incident"))
-    student = models.ForeignKey(Profile, help_text=_("The student associated with this incident"))
+    teacher = models.ForeignKey(Profile, help_text=_("The teacher associated with this incident"), related_name='teacher_incidents')
+    student = models.ForeignKey(Profile, help_text=_("The student associated with this incident"), related_name='student_incidents')
 

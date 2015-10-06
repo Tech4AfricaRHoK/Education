@@ -2,7 +2,7 @@
 Serializers for the teacher feedback API.
 """
 
-from models import Profile
+from teacherfeedback.models import Profile
 from rest_framework import serializers
 
 
@@ -21,22 +21,22 @@ class UserSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(required=True, max_length=255)
     surname = serializers.CharField(required=True, max_length=255)
-    mobile = serializers.CharField(required=False, allow_blank=True, max_length=100)
-    password = serializers.CharField(max_length=255, required=False, allow_blank=True)
+    mobile = serializers.CharField(required=False, allow_null=True, max_length=100)
+    password = serializers.CharField(max_length=255, required=False, allow_null=True)
     profile_type = serializers.ChoiceField(choices=Profile.TYPES, default=Profile.STUDENT)
-    email = serializers.EmailField(required=False, max_length=255, allow_blank=True)
+    email = serializers.EmailField(required=False, max_length=255, allow_null=True)
 
     # for when we're creating a teacher - we need a subject list of what they teach
     subjects = serializers.ListField(
         child=TeacherSubjectSerializer(),
         required=False,
-        allow_blank=True
+        allow_null=True
     )
 
     # for when we're creating a student and/or teacher - the pk of the school
-    school_id = serializers.IntegerField(required=False, allow_blank=True)
+    school_id = serializers.IntegerField(required=False, allow_null=True)
     # for when we're creating students
-    grade = serializers.IntegerField(required=False, allow_blank=True, min_value=1, max_value=12)
+    grade = serializers.IntegerField(required=False, allow_null=True, min_value=1, max_value=12)
 
 
     def validate(self, data):
