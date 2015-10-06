@@ -40,9 +40,9 @@ class School(models.Model):
     name = models.CharField(max_length=255, help_text=_("School's name"))
     street_number = models.IntegerField(help_text=_("School's street number"))
     street_name = models.CharField(max_length=255, help_text=_("School's street name"))
-    city = models.IntegerField(help_text=_("School's city"))
-    province = models.IntegerField(help_text=_("School's province"))
-    country = models.IntegerField(help_text=_("School's country"))
+    city = models.CharField(max_length=255, help_text=_("School's city"))
+    province = models.CharField(max_length=255, help_text=_("School's province"))
+    country = models.CharField(max_length=255, help_text=_("School's country"))
 
     def __unicode__(self):
         return "%s" % self.name
@@ -98,4 +98,3 @@ class Incident(models.Model):
     comment = models.TextField(blank=True, null=True, help_text=_("Comment associated with a incident"))
     teacher = models.ForeignKey(Profile, help_text=_("The teacher associated with this incident"), related_name='teacher_incidents')
     student = models.ForeignKey(Profile, help_text=_("The student associated with this incident"), related_name='student_incidents')
-
