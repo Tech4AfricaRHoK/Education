@@ -2,12 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 
-INCIDENT_TYPES = (
-    ('Absent', 'Absent'),
-    ('NoTeaching', 'No Teaching'),
-    ('Abuse', 'Abuse'),
-    ('Other', 'Other'),
-)
+
 
 class Profile(models.Model):
     """
@@ -38,6 +33,7 @@ class Profile(models.Model):
     def __unicode__(self):
         return "%s %s" % (self.name, self.surname)
 
+
 class School(models.Model):
     name = models.CharField(max_length=255, help_text=_("School's name"))
     street_number = models.IntegerField(help_text=_("School's street number"))
@@ -46,23 +42,50 @@ class School(models.Model):
     province = models.IntegerField(help_text=_("School's province"))
     country = models.IntegerField(help_text=_("School's country"))
 
+
 class Grade(models.Model):
     number = models.IntegerField(help_text=_("Grade number"))
 
+
 class Subject(models.Model):
     name = models.CharField(max_length=255, help_text=_("Name of a subject"))
+
 
 class GradeSubject(models.Model):
     grade = models.ForeignKey(Grade)
     subject = models.ForeignKey(Subject)
 
+
 class Rating(models.Model):
+    """
+    For when a student wants to rate a particular teacher.
+    """
     value = models.IntegerField(help_text=_("Rating given to a teacher"))
     comment = models.CharField(max_length=1000, help_text=_("Comment associated with a rating"))
-    teacher = models.ForeignKey(Profile)
+    teacher = models.ForeignKey(Profile, help_text=_("The teacher associated with this rating"))
+    student = models.ForeignKey(Profile, help_text=_("The student associated with this rating"))
+
 
 class Incident(models.Model):
-    incidentType = models.CharField(max_length=255, help_text=_("Type of incident"), choices=INCIDENT_TYPES)
-    otherType = models.CharField(max_length=255, help_text=_("Other type of incident"), blank=True)
-    comment = models.CharField(max_length=1000, help_text=_("Comment associated with a incident"))
-    teacher = models.ForeignKey(Profile)
+    """
+    For when a student wants to report some kind of incident involving a teacher.
+    """
+    ABSENT = 'absent'
+    MISSING_TEACHER = 'missing'
+    NOT_TEACHING = 'notteaching'
+    ABUSE = 'abuse'
+    OTHER = 'other'
+
+    TYPES = (
+        (ABSENT, 'Absent'),
+        (NOT_TEACHING, 'Not teaching'),
+        (ABUSE, 'Abuse'),
+        (MISSING_TEACHER, 'Missing teacher'),
+        (OTHER, 'Other'),
+    )
+    incident_type = models.CharField(max_length=255, help_text=_("Type of incident"), choices=INCIDENT_TYPES)
+    other_type = models.CharField(max_length=255, help_text=_("Other type of incident"), blank=True, null=True)
+    comment = models.TextField(blank=True, null=True, help_text=_("Comment associated with a incident"))
+    teacher = models.ForeignKey(Profile, help_text=_("The teacher associated with this incident"))
+    student = models.ForeignKey(Profile, help_text=_("The student associated with this incident"))
+
