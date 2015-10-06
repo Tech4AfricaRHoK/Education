@@ -1,0 +1,65 @@
+﻿<html>
+<head runat="server">
+    <title>Teacher Creation</title>
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+
+
+
+            <div class="container">
+                <div class="col-md-4 col-md-offset-4">
+                    <div>
+                        <br><br><br><br>
+                    </div>
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading capricon-panel-heading">
+                            <h3 class="panel-title">Create a Teacher</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form commandName="signInBean" method="post" role="form" width=50>
+                                <fieldset>
+                                    <div class="form-group">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Name" path="name" type="text" autofocus="true" required="true"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Surname" path="surname" type="text" required="true"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="School" path="school" type="text" required="true"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Subject" path="subject" type="text" required="true"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Grade" path="grade" type="text" value="" required="true"></input>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block"> Close </button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+</body>
+</html>
