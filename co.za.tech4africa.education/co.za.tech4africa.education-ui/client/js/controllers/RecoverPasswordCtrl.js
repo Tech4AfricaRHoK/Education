@@ -4,7 +4,7 @@ angular.module('RecoverPasswordCtrl', []).controller('RecoverPasswordController'
         cellno: ""
     };
     
-    $('#recoverPasswordForm').parsley();    
+   // $('#recoverPasswordForm').parsley();    
     
     // Authenticate user
     $scope.recoverPassword = function(){        

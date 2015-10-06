@@ -33,7 +33,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
         .when('/rate-my-teacher', {
             templateUrl: 'pages/teacher/rate.html',
-            controller: 'RecoverPasswordController'
+            controller: 'RatingController'
         })
         ;
 

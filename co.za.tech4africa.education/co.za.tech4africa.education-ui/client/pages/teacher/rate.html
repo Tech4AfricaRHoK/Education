@@ -1,78 +1,46 @@
-<html ng-app="RateMySchoolApp">
-<head runat="server">
-   <title>Rate My Teacher - Rate</title>
-   <meta name="viewport" content="width=device-width,
-      initial-scale=1" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="rate.css">
-</head>
-<body>
-   <nav class="navbar navbar-inverse navbar-fixed-top"
-   role="navigation">
-   <div id="divContainer" class="container">
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle collapsed"
-            data-toggle="collapse" data-target="#navbarContent">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-         </button>
-         <a class="navbar-brand navbar-left" href="#">
-            Tech4Africa Education
-         </a>
-      </div>
-      <div id="navbarContent" class="collapse navbar-collapse">
-         <ul class="nav navbar-nav navbar-right">
-            <li><a href="../../index.html">Profile</a></li>
-            <li class="active"><a href="#">School</a></li>
-            <li><a href="pages/security/recover-password.html">Sign Out</a></li>
-         </ul>
-      </div>
-   </div>
-  </nav>
-  <div class="container"  ng-controller="RatingController as ratingCon">
+<div class="container"  ng-controller="RatingController as ratingCon">
   	<div class="content">
 	    <div class="container">
 	        <div class="col-md-12 col-md-offset-0">
 	            <div>
 	              <br><br><br><br>
+                <ul class="rating">
+    
+   </ul>
 	              <!-- Add the create teacher button -->
 	              <button type="submit" class="btn btn-lg btn-success btn-block">Add New Teacher</button>
+                <div ng-init="rating = star.rating + 1"></div>
+
+
 	              <!-- create the list of teachers in your grade -->
-	                <h2>List Group With Custom Content</h2>
+	                <h2>Teachers From Your Grade</h2>
 					  <div class="list-group">
-					    <a href="#" class="list-group-item active">
-					      <h4 class="list-group-item-heading">First List Group Item Heading</h4>
-					      <p class="list-group-item-text">List Group Item Text</p>
-					      <div star-rating ng-model="ratingCon.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div>
-					    </a>
-					    <a href="#" class="list-group-item">
-					      <h4 class="list-group-item-heading">Second List Group Item Heading</h4>
-					      <p class="list-group-item-text">List Group Item Text</p>
-					      <div star-rating ng-model="ratingCon.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div>
-					    </a>
-					    <a href="#" class="list-group-item">
-					      <h4 class="list-group-item-heading">Third List Group Item Heading</h4>
-					      <p class="list-group-item-text">List Group Item Text</p>
-					      <div star-rating ng-model="ratingCon.rating1" max="10" on-rating-select="rating.rateFunction(rating)"></div>
-					    </a>
+					    <div class="list-group-item">
+					      <h4 class="list-group-item-heading">Vutlhari Ndlovhu</h4>
+					      <p class="list-group-item-text">Grade 1, Java, Html5</p>
+					      <div star-rating ng-model="ratingCon.rating1" max="10" on-rating-select="ratingCon.rateFunction(ratingCon)"></div>
+                <div class="star-rating" star-rating rating-value="rating"
+
+ data-max="10" on-rating-selected="rateFunction(rating)"></div>
+               
+					    </div>
+					    <div class="list-group-item">
+					      <h4 class="list-group-item-heading">Michael Preite</h4>
+					      <p class="list-group-item-text">Grade 5, Maths, Database</p>
+					      <div class="star-rating" star-rating rating-value="rating"
+
+ data-max="10" on-rating-selected="rateFunction(rating)"></div>
+					    </div>
+					    <div class="list-group-item">
+					      <h4 class="list-group-item-heading">Desmond Makhubele</h4>
+					      <p class="list-group-item-text">Grade 3, C#, English</p>
+					      <div class="star-rating" star-rating rating-value="rating"
+
+ data-max="10" on-rating-selected="rateFunction(rating)"></div>
+					    </div>
 					  </div>
 	            </div>
 	        </div>
 	 	</div>
     </div>
-  </div>
-  <!--angular controller for this page-->
-  <script src="rate.js"></script> 
-     <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
-</body>
-</html>
+</div>
