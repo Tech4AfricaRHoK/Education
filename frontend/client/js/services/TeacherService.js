@@ -2,12 +2,12 @@ angular.module('TeacherService', []).factory('Teacher', ['$http', function($http
 
     return {
 		
-        rating : function(data) {
-            return $http.post('http://localhost:8080/api/feedback/rating', data);
+        rateTeacher : function(data) {
+            return $http.post('http://rateyourteacher.cloudapp.net/api/feedback/rating', data);
         },
 		
-        getAllTeachers : function(data) {
-            return $http.post('http://localhost:8080/api/teacher/getAllTeachers', data);
+        searchTeacher : function(data) {
+            return $http.post('http://rateyourteacher.cloudapp.net/api/user', data);
         },
         
         session : function(data) {
