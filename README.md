@@ -1,5 +1,5 @@
 # Education
-Repo for the Tech4Africa Random Hack of Kindness, focussing on education.
+Repo for the Tech4Africa Random Hack of Kindness, focusing on education.
 
 ## Problem
 Students arrive at school / university, and find that their teachers are not there, they are drunk, or simply not teaching.
