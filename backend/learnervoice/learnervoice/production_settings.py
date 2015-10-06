@@ -12,5 +12,5 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 from learnervoice.settings import *
 
-#DEBUG = False
+DEBUG = False
 

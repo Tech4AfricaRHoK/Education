@@ -12,6 +12,13 @@ def ser(o):
     return json.dumps(o)
 
 
+def teacher_dict(profile):
+    """
+    Serializes a teacher object.
+    """
+    return {"id": profile.pk, "surname": profile.surname, "name": profile.name}
+
+
 def err(msg):
     """
     Shortcut for error handling.
@@ -36,10 +43,10 @@ def list_teachers(request):
     if 'q' in request.GET:
         query = request.GET['q']
         print("Attempting to query teachers by search string: %s" % query)
-        return json_response([p for p in Profile.objects.filter( \
+        return json_response([teacher_dict(p) for p in Profile.objects.filter( \
             profile_type=Profile.TEACHER).filter(Q(name__icontains=query) | Q(surname__icontains=query)).all()])
     else:
-        return json_response([p for p in Profile.objects.filter( \
+        return json_response([teacher_dict(p) for p in Profile.objects.filter( \
             profile_type=Profile.TEACHER).all()])
 
 
