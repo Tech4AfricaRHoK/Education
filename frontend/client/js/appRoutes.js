@@ -37,10 +37,16 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
         
 
-
+        //Teacher
         .when('/add-teacher', {
             templateUrl: 'pages/teacher/create-teacher.html',
             controller: 'AddTeacherController'
+        })
+
+        //School
+        .when('/schools', {
+            templateUrl: 'pages/school/schools.html',
+            controller: 'SchoolController'
         })
         ;
 
