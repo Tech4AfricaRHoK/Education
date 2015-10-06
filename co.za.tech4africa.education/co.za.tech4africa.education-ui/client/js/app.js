@@ -7,9 +7,13 @@ angular.module('RateMyTeacherApp', [
 	'LoginCtrl',
 	'RegistrationCtrl',
 	'RecoverPasswordCtrl',
+	'RatingCtrl',
 	
 	// Services: 
 	
 	'AuthenticationService'
+
+	// Directives: 
+	//'RatingDrtv'
 	
 ]);
