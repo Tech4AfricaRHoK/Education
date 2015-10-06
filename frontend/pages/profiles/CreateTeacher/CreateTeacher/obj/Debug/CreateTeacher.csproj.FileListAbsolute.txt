@@ -1,0 +1,6 @@
+E:\Tech4Africa\Education\co.za.tech4africa.education\co.za.tech4africa.education-ui\pages\profiles\CreateTeacher\CreateTeacher\bin\CreateTeacher.dll.config
+E:\Tech4Africa\Education\co.za.tech4africa.education\co.za.tech4africa.education-ui\pages\profiles\CreateTeacher\CreateTeacher\bin\CreateTeacher.dll
+E:\Tech4Africa\Education\co.za.tech4africa.education\co.za.tech4africa.education-ui\pages\profiles\CreateTeacher\CreateTeacher\bin\CreateTeacher.pdb
+E:\Tech4Africa\Education\co.za.tech4africa.education\co.za.tech4africa.education-ui\pages\profiles\CreateTeacher\CreateTeacher\obj\Debug\CreateTeacher.csprojResolveAssemblyReference.cache
+E:\Tech4Africa\Education\co.za.tech4africa.education\co.za.tech4africa.education-ui\pages\profiles\CreateTeacher\CreateTeacher\obj\Debug\CreateTeacher.dll
+E:\Tech4Africa\Education\co.za.tech4africa.education\co.za.tech4africa.education-ui\pages\profiles\CreateTeacher\CreateTeacher\obj\Debug\CreateTeacher.pdb

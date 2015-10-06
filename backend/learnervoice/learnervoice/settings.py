@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'haystack',
-    'rest_framework',
     'teacherfeedback',
 )
 
@@ -85,10 +84,6 @@ DATABASES = {
         'PASSWORD': 'learnervoice',
     }
 }
-
-# FIXTURE_DIRS = (
-#     BASE_DIR + '/teacherfeedback/fixtures/',
-# )
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
