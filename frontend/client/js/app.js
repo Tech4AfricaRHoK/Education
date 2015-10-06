@@ -11,8 +11,9 @@ angular.module('RateMyTeacherApp', [
 	
 	// Services: 
 	
-	'AuthenticationService'
+	'AuthenticationService',
 
+	'TeacherService'
 	// Directives: 
 	//'RatingDrtv'
 	
