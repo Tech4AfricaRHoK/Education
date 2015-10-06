@@ -1,3 +1,7 @@
 from django.contrib import admin
+from teacherfeedback.models import Profile
 
-# Register your models here.
+class ProfileAdmin(admin.ModelAdmin):
+    fields = ('surname', 'name', 'profile_type', 'mobile')
+
+admin.site.register(Profile, ProfileAdmin)

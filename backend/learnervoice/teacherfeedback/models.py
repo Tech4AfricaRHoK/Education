@@ -27,7 +27,7 @@ class Profile(models.Model):
             help_text=_("The (optional) user account associated with this profile."))
     name = models.CharField(max_length=255, help_text=_("The person's first name"))
     surname = models.CharField(max_length=255, help_text=_("The person's last name"))
-    mobile = models.CharField(max_length=100, unique=True, help_text=_("The person's mobile phone number."))
+    mobile = models.CharField(max_length=100, null=True, blank=True, help_text=_("The person's mobile phone number."))
     profile_type = models.CharField(max_length=30, choices=TYPES, default=STUDENT)
     school = models.ForeignKey('School', null=True, blank=True, help_text=_("The school for this user, if any"))
     grade = models.IntegerField(null=True, blank=True, help_text=_("The grade associated with this profile, if any"))
