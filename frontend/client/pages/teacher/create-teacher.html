@@ -1,0 +1,95 @@
+ <nav class="navbar navbar-inverse navbar-fixed-top"role="navigation">
+    <div id="divContainer" class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#navbarContent">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand navbar-left" href="#">
+              Rate My Teacher
+          </a>
+        </div>
+        <div id="navbarContent" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Schools <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li class="active"><a href="/add-teacher">Add School</a></li>
+                  <li><a href="/schools">Search School</a></li>
+                </ul>
+              </li>
+              <li><a href="/registration">Teachers</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">My Profile</a></li>
+                  <li><a href="#">Sign Out</a></li>
+                </ul>
+              </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+<div class="container">
+    <div class="content">
+
+
+
+        <div class="container">
+            <div class="col-md-4 col-md-offset-4">
+                <div>
+                    <br><br><br><br>
+                </div>
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading capricon-panel-heading">
+                        <h3 class="panel-title">Create a Teacher</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form commandName="signInBean" method="post" role="form" width=50>
+                            <fieldset>
+                                <div class="form-group">
+
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Name" path="name" type="text" autofocus="true" required="true"></input>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Surname" path="surname" type="text" required="true"></input>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="School" path="school" type="text" required="true"></input>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Subject" path="subject" type="text" required="true"></input>
+                                </div>
+                                <div>
+                                    Grade:<select class="form-control">
+                                        <option>Grade 1</option>
+                                        <option>Grade 2</option>
+                                        <option>Grade 3</option>
+                                        <option>Grade 4</option>
+                                        <option>Grade 5</option>
+                                        <option>Grade 6</option>
+                                        <option>Grade 7</option>
+                                        <option>Grade 8</option>
+                                        <option>Grade 9</option>
+                                        <option>Grade 10</option>
+                                        <option>Grade 11</option>
+                                        <option>Grade 12</option>
+                                    </select>
+                                </div></br>
+
+                                <div>
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block">Add Teacher</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

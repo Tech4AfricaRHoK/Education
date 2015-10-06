@@ -1,0 +1,5 @@
+I'm responsible for creating a school table holding the details of a School (Back-end). . . .
+
+TABLE/ENTITY name: SCHOOL Attributes: (PK)SCHL_ID, (CONSTRAINT)SCHL_NAME, SCHL_ABBR, SCHL_STREET_ADDR, SCHL_CITY, SCHL_COUNTRY, SCHL_POSTAL_CODE
+
+SCHL_NAME, SCHL_CITY - (Unique Constraint)

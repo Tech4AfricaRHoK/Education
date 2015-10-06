@@ -1,0 +1,16 @@
+*.swp
+*.pyc
+*.bak
+.DS_Store
+.project
+*.pydevproject
+.metadata
+.gradle
+bin/
+tmp/
+lib/
+include/
+.settings/
+.loadpath
+.classpath
+.Python
