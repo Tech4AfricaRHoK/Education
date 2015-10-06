@@ -25,7 +25,8 @@ angular.module('RatingCtrl', []).controller('RatingController', function($scope,
         //$window.location.href = '/rate-my-teacher';      
         Teacher.searchTeacher([{}])
         .success(function(data){
-          var response1 = data.response;
+          var response1 = data;
+          ratingC.teacherList = response1;
         //    $scope.loginFormData = {};
         //    $scope.user = data;
         //    console.log(data);
