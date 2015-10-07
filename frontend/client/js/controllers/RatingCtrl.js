@@ -1,4 +1,4 @@
-angular.module('RatingCtrl', []).controller('RatingController', function($scope, $http, $window) {
+angular.module('RatingCtrl', []).controller('RatingController', function($scope, $http, $window,Teacher) {
         
     var ratingC = this;
     $scope.rateFunction = function( rating )
@@ -21,10 +21,12 @@ angular.module('RatingCtrl', []).controller('RatingController', function($scope,
 };
 
 // Search Teacher
-    ratingC.searchTeacher = function(){  
+//    ratingC.searchTeacher = function(){  
         //$window.location.href = '/rate-my-teacher';      
-        Authentication.searchTeacher(JSON.stringify($scope.loginData))
+        Teacher.searchTeacher([{}])
         .success(function(data){
+          var response1 = data;
+          ratingC.teacherList = response1;
         //    $scope.loginFormData = {};
         //    $scope.user = data;
         //    console.log(data);
@@ -42,7 +44,7 @@ angular.module('RatingCtrl', []).controller('RatingController', function($scope,
         .error(function(data){
             //$window.location.href = '/registration';
         });
-    };
+//    };
 
 // Rate Teacher
     ratingC.rateTeacher = function(){  

@@ -51,29 +51,16 @@
 	              <!-- create the list of teachers in your grade -->
 	                <h2>Teachers From Your Grade</h2>
 					  <div class="list-group">
-					    <div class="list-group-item">
-					      <h4 class="list-group-item-heading">Vutlhari Ndlovhu</h4>
-					      <p class="list-group-item-text">Grade 1, Java, Html5</p>
+					    <div class="list-group-item"  ng-repeat="teacher in ratingCon.teacherList">
+					      <h4 class="list-group-item-heading">{{teacher.name}}</h4>
+					      <p class="list-group-item-text">{{teacher.surname}}</p>
 					      <div star-rating ng-model="ratingCon.rating1" max="10" on-rating-select="ratingCon.rateFunction(ratingCon)"></div>
                 <div class="star-rating" star-rating rating-value="rating"
 
  data-max="10" on-rating-selected="rateFunction(rating)"></div>
                
 					    </div>
-					    <div class="list-group-item">
-					      <h4 class="list-group-item-heading">Michael Preite</h4>
-					      <p class="list-group-item-text">Grade 5, Maths, Database</p>
-					      <div class="star-rating" star-rating rating-value="rating"
-
- data-max="10" on-rating-selected="rateFunction(rating)"></div>
-					    </div>
-					    <div class="list-group-item">
-					      <h4 class="list-group-item-heading">Desmond Makhubele</h4>
-					      <p class="list-group-item-text">Grade 3, C#, English</p>
-					      <div class="star-rating" star-rating rating-value="rating"
-
- data-max="10" on-rating-selected="rateFunction(rating)"></div>
-					    </div>
+					    
 					  </div>
 	            </div>
 	        </div>

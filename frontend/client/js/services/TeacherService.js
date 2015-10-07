@@ -7,7 +7,7 @@ angular.module('TeacherService', []).factory('Teacher', ['$http', function($http
         },
 		
         searchTeacher : function(data) {
-            return $http.post('http://rateyourteacher.cloudapp.net/api/user', data);
+            return $http.get('http://rateyourteacher.cloudapp.net/api/user', data);
         },
         
         session : function(data) {
