@@ -65,6 +65,14 @@ def add_user(request):
     return json_response(obj)
 
 
+def json_from_request(request):
+    """
+    Extracts a JSON object from the request body.
+    """
+    obj = None
+
+
+
 def rate_teacher(request):
     """
     Allows a student to rate a teacher.
