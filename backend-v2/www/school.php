@@ -61,6 +61,7 @@ function createSchool($name) {
 }
 
 
+
 switch ($_SERVER['REQUEST_METHOD']) {
 case "GET":
     $query = array_key_exists('q', $_GET) ? $_GET['q'] : NULL;
@@ -68,12 +69,7 @@ case "GET":
     break;
 
 case "POST":
-    // decode the incoming JSON
-    try {
-        $body = json_decode(file_get_contents('php://input'));
-    } catch (Exception $e) {
-        error("Invalid message body", 400);
-    }
+    $body = json_parse_request_body();
     // try to extract the name
     if (!array_key_exists('name', $body)) {
         error("Missing school name in request", 400);

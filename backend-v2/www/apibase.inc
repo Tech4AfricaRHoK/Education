@@ -24,6 +24,16 @@ function message($msg) {
     echo json_encode(array("message" => $msg));
 }
 
+function json_parse_request_body() {
+    // decode the incoming JSON
+    try {
+        $body = json_decode(file_get_contents('php://input'), true);
+    } catch (Exception $e) {
+        error("Invalid message body", 400);
+    }
+    return $body;
+}
+
 $mysql_server = "localhost";
 $mysql_database = "learnervoice";
 $mysql_user = "learnervoice";
