@@ -46,7 +46,12 @@ function getUserByMobile($mobile) {
     if ($stmt->rowCount() == 0) {
         return NULL;
     }
-    return $results[0];
+    return array('id' => $results[0]['id'],
+        'mobile' => $results[0]['mobile'],
+        'learnerId' => $results[0]['learner_id'],
+        'teacherId' => $results[0]['teacher_id'],
+        'created' => $results[0]['created'],
+        'password' => $results[0]['password']);
 }
 
 /**
@@ -85,24 +90,7 @@ function getLearnerByMobile($mobile) {
         return NULL;
     }
 
-    $stmt = $db->prepare('SELECT id,name,surname,school_id,created FROM learners WHERE id=?');
-    $stmt->execute(array($user['learner_id']));
-    $results = $stmt->fetchAll();
-
-    // no such learner
-    if ($stmt->rowCount() == 0) {
-        return NULL;
-    }
-
-    $learner = $results[0];
-
-    return array('user_id' => $user['id'],
-        'mobile' => $user['mobile'],
-        'learner_id' => intval($user['learner_id']),
-        'name' => $learner['name'],
-        'surname' => $learner['surname'],
-        'school_id' => intval($learner['school_id']),
-        'created' => $learner['created']);
+    return getLearnerById($user['learnerId'], $user);
 }
 
 /**
@@ -170,6 +158,8 @@ case "POST":
             error("Learner with that mobile number already exists", 400);
         }
         echo json_encode($learner);
+    } elseif ($body['type'] == 'teacher') {
+        // TODO: Finish this
     } else {
         error("Unsupported user type", 400);
     }

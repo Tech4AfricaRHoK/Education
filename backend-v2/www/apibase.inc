@@ -24,6 +24,9 @@ function message($msg) {
     echo json_encode(array("message" => $msg));
 }
 
+/**
+ * Returns a parsed version of the request body (assuming it's JSON).
+ */
 function json_parse_request_body() {
     // decode the incoming JSON
     try {
@@ -32,6 +35,70 @@ function json_parse_request_body() {
         error("Invalid message body", 400);
     }
     return $body;
+}
+
+function getUserById($userId) {
+    global $db;
+
+    $stmt = $db->prepare('SELECT id,mobile,learner_id,teacher_id,created,password FROM users WHERE id=?');
+    $stmt->execute(array($userId));
+    $results = $stmt->fetchAll();
+    // no such user?
+    if ($stmt->rowCount() == 0) {
+        return NULL;
+    }
+
+    return array('id' => $results[0]['id'],
+        'mobile' => $results[0]['mobile'],
+        'learnerId' => $results[0]['learner_id'],
+        'teacherId' => $results[0]['teacher_id'],
+        'created' => $results[0]['created'],
+        'password' => $results[0]['password']);
+}
+
+function getTeacherById($teacherId) {
+    global $db;
+
+    $stmt = $db->prepare('SELECT id,name,surname,school_id,created FROM teachers WHERE id=?');
+    $stmt->execute(array($teacherId));
+    if ($stmt->rowCount() == 0) {
+        return NULL;
+    }
+
+    $teacher = $stmt->fetchAll()[0];
+    return array('id' => $teacher['id'],
+        'name' => $teacher['name'],
+        'surname' => $teacher['surname'],
+        'schoolId' => $teacher['school_id'],
+        'created' => $teacher['created']);
+}
+
+function getLearnerById($learnerId, $withUser = NULL) {
+    global $db;
+
+    $stmt = $db->prepare('SELECT id,name,surname,school_id,created FROM learners WHERE id=?');
+    $stmt->execute(array($learnerId));
+    $results = $stmt->fetchAll();
+
+    // no such learner
+    if ($stmt->rowCount() == 0) {
+        return NULL;
+    }
+
+    $result = $results[0];
+    $learner = array('id' => $learnerId,
+        'name' => $result['name'],
+        'surname' => $result['surname'],
+        'schoolId' => $result['school_id'],
+        'created' => $result['created']);
+
+    if ($withUser != NULL) {
+        $learner = array_merge($learner, array('userId' => $withUser['id'],
+            'mobile' => $withUser['mobile'],
+            'password' => $withUser['password']));
+    }
+
+    return $learner;
 }
 
 $mysql_server = "localhost";
