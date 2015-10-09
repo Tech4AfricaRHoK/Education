@@ -66,7 +66,6 @@ CREATE TABLE IF NOT EXISTS incidents (
     teacher_id INT NOT NULL,
     learner_id BIGINT NOT NULL,
     description TEXT NOT NULL,
-    occurred TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
     FOREIGN KEY(teacher_id) REFERENCES teachers(id),
